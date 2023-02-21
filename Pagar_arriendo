@@ -1,0 +1,25 @@
+from mcpi.minecraft import Minecraft
+import collections
+import time
+
+from _collections_abc import Iterable 
+collections.Iterable = Iterable
+
+
+mc = Minecraft.create("104.238.210.119", 31100)
+
+X1= 10
+Z1= 10
+
+X2= 20
+Z2= 20
+
+rent = 0
+
+while True:
+    time.sleep(1)
+    pos = mc.player.getTilePos()
+    if pos.x>X1 and pos.x<X2 and pos.z>Z1 and pos.z<Z2:
+        rent = rent+1
+        mc.postToChat("You owe rent:"+str(rent))
+
