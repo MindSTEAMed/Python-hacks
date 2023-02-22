@@ -1,0 +1,16 @@
+import ColabTurtle.Turtle as tim
+from random import randint
+
+def initializeTimTheTurtle():
+  initializeTurtle()
+  penup()
+  goto(300, 20)
+  pendown()
+  tim.right(90)
+
+def drawShapes(num_sides):
+    tim.color(randint(0, 255),randint(0, 255),randint(0, 255))
+    for _ in range(num_sides):
+      angle = 360/num_sides
+      tim.forward(100)
+      tim.right(angle)
