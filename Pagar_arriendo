@@ -4,9 +4,7 @@ import time
 
 from _collections_abc import Iterable 
 collections.Iterable = Iterable
-
-
-mc = Minecraft.create("104.238.210.119", 31100)
+mc = Minecraft.create()
 
 X1= 10
 Z1= 10
@@ -19,6 +17,7 @@ rent = 0
 while True:
     time.sleep(1)
     pos = mc.player.getTilePos()
+    mc.postToChat("x="+str(pos.x) +" y="+str(pos.y) +" z="+str(pos.z))
     if pos.x>X1 and pos.x<X2 and pos.z>Z1 and pos.z<Z2:
         rent = rent+1
         mc.postToChat("You owe rent:"+str(rent))
